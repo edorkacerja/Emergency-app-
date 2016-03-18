@@ -10,6 +10,7 @@
         <item>Threat</item>
         <item>Weapon</item>
         <item>Robbery</item>
+        <item>Other</item>
     </string-array>
 
 

@@ -5,20 +5,23 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class Report extends AppCompatActivity {
+public class Report extends AppCompatActivity implements OnItemClickListener{
 
     ListView listView;
     String[] reportTitles;
-    int[] icons = {R.drawable.threat, R.drawable.weapon, R.drawable.robbery};
+    int[] icons = {R.drawable.threat, R.drawable.weapon, R.drawable.robbery, R.drawable.threat};
 
 
     @Override
@@ -40,7 +43,13 @@ public class Report extends AppCompatActivity {
 
         EdorsAdapter adapter = new EdorsAdapter(this, reportTitles, icons);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(this);
 
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Log.v("edor", "item "+ position +" clicked");
     }
 
 
