@@ -23,7 +23,7 @@ public class CampusMap extends AppCompatActivity {
     }
 
 
-    public boolean showCampusMap(View view){
+    public boolean showCampusMap(View view){  
 
         Intent intent = new Intent(this, SkaptoparaCampus.class);
         startActivity(intent);
