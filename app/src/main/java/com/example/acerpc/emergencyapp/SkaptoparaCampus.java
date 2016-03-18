@@ -25,7 +25,7 @@ public class SkaptoparaCampus extends FragmentActivity implements OnMapReadyCall
     }
 
 
-   
+
 
     /**
      * Manipulates the map once available.

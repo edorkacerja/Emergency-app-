@@ -1,11 +1,12 @@
 package com.example.acerpc.emergencyapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+
 
 public class CampusMap extends AppCompatActivity {
 
@@ -22,9 +23,14 @@ public class CampusMap extends AppCompatActivity {
     }
 
 
-    public void showCampusMap(View view){
-        Log.v("edor", "campus map clicked");
+    public boolean showCampusMap(View view){
+
+        Intent intent = new Intent(this, SkaptoparaCampus.class);
+        startActivity(intent);
+        return true;
     }
+
+
 
 
     private void initToolbars() {
