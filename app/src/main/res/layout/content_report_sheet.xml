@@ -25,6 +25,7 @@
         android:orientation="vertical"
         android:padding="20dp"
         android:weightSum="1"
+        android:layout_above="@+id/toolbar_bottom"
         android:background="#CCC">
 
 
