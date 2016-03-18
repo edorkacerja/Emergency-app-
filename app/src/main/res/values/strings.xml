@@ -5,4 +5,12 @@
     <string name="title_activity_emergency_contact">EmergencyContact</string>
     <string name="title_activity_info">Info</string>
     <string name="title_activity_map">Map</string>
+
+    <string-array name="titles">
+        <item>Threat</item>
+        <item>Weapon</item>
+        <item>Robbery</item>
+    </string-array>
+
+
 </resources>
