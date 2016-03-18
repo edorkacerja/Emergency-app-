@@ -4,9 +4,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 public class Report extends AppCompatActivity {
 
+    ListView listView;
+    String[] data = {"Threat", "Weapon", "Robbery"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,6 +20,12 @@ public class Report extends AppCompatActivity {
         initToolbars();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+        listView = (ListView) findViewById(R.id.listView);
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_2, data);
+        listView.setAdapter(dataAdapter);
+
     }
 
 
