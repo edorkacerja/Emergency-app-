@@ -8,6 +8,9 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity   {
 
@@ -32,7 +35,7 @@ public class MainActivity extends AppCompatActivity   {
                 new Button.OnLongClickListener() {
                     @Override
                     public boolean onLongClick(View v) {
-                        Log.v("edor", "longclick");
+                        Toast.makeText(MainActivity.this, "Emergency message sent", Toast.LENGTH_SHORT).show();
                         return true;
                     }
                 });
@@ -52,9 +55,19 @@ public class MainActivity extends AppCompatActivity   {
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.action_call:
-                        // TODO
+
+                        Intent intent = new Intent(getBaseContext(), EmergencyContact.class);
+                        startActivity(intent);
                         break;
                     // TODO: Other cases
+                    case R.id.action_info:
+                        Intent intent2 = new Intent(getBaseContext(), Info.class);
+                        startActivity(intent2);
+                        break;
+                    case R.id.action_map:
+                        Intent intent3 = new Intent(getBaseContext(), Map.class);
+                        startActivity(intent3);
+                    break;
                 }
                 return true;
             }
@@ -89,19 +102,4 @@ public class MainActivity extends AppCompatActivity   {
 
 
 
-
-
-
-
-//    @Override
-//    public boolean onLongClick(View v) {
-//
-//        if(v.getId()== R.id.btnEmergency){
-//            Toast.makeText(this, "Long Clicked", Toast.LENGTH_SHORT).show();
-//            Log.v("edor", "longclick");
-//        }
-//
-//
-//        return true;
-//    }
 }

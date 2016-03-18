@@ -27,6 +27,33 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.acerpc.emergencyapp.MainActivity" />
         </activity>
+        <activity
+            android:name=".EmergencyContact"
+            android:label="@string/title_activity_emergency_contact"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.acerpc.emergencyapp.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Info"
+            android:label="@string/title_activity_info"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.acerpc.emergencyapp.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Map"
+            android:label="@string/title_activity_map"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.acerpc.emergencyapp.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
