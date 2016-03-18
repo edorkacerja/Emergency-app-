@@ -13,7 +13,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class SkaptoparaCampus extends FragmentActivity implements OnMapReadyCallback {
+public class MainBuilding extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
 
@@ -43,7 +43,7 @@ public class SkaptoparaCampus extends FragmentActivity implements OnMapReadyCall
             return;
         }
         mMap.setMyLocationEnabled(true);
-        
+
         mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
 
 
@@ -52,7 +52,7 @@ public class SkaptoparaCampus extends FragmentActivity implements OnMapReadyCall
 
         mMap.addMarker(new MarkerOptions().position(Blagoevgrad).title("Blagoevgrad"));
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Blagoevgrad, 17));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Blagoevgrad, 10));
 
     }
 }

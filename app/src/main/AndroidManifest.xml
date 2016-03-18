@@ -8,7 +8,6 @@
          location permissions for the 'MyLocation' functionality. 
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="22" />
@@ -22,12 +21,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-
-
 
         <activity
             android:name=".MainActivity"
@@ -93,10 +89,16 @@
              You can define the keys for the debug and release targets in src/debug/ and src/release/. 
         -->
 
-
         <activity
             android:name=".SkaptoparaCampus"
             android:label="@string/title_activity_skaptopara_campus">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.acerpc.emergencyapp.CampusMap" />
+        </activity>
+        <activity
+            android:name=".MainBuilding"
+            android:label="@string/title_activity_main_building">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.acerpc.emergencyapp.CampusMap" />
