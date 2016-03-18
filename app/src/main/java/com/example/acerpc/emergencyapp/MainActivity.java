@@ -8,9 +8,8 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity  implements View.OnLongClickListener {
+public class MainActivity extends AppCompatActivity   {
 
     Button btnReport;
     Button btnMap;
@@ -28,6 +27,15 @@ public class MainActivity extends AppCompatActivity  implements View.OnLongClick
         btnMap = (Button) findViewById(R.id.btnMap);
         btnEmergency = (Button) findViewById(R.id.btnEmergency);
 
+
+        btnEmergency.setOnLongClickListener(
+                new Button.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View v) {
+                        Log.v("edor", "longclick");
+                        return true;
+                    }
+                });
 
     }
 
@@ -81,23 +89,19 @@ public class MainActivity extends AppCompatActivity  implements View.OnLongClick
 
 
 
-    public void viewMap(View view ){
-
-    }
-
-    public void emergency(View view){
-
-    }
 
 
-    @Override
-    public boolean onLongClick(View v) {
-
-        if(v.getId()== R.id.btnEmergency){
-            Toast.makeText(this,"Emergency message sent",Toast.LENGTH_SHORT).show();
-        }
 
 
-        return true;
-    }
+//    @Override
+//    public boolean onLongClick(View v) {
+//
+//        if(v.getId()== R.id.btnEmergency){
+//            Toast.makeText(this, "Long Clicked", Toast.LENGTH_SHORT).show();
+//            Log.v("edor", "longclick");
+//        }
+//
+//
+//        return true;
+//    }
 }
