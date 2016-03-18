@@ -23,7 +23,7 @@ public class Report extends AppCompatActivity {
 
 
         listView = (ListView) findViewById(R.id.listView);
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_2, data);
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, data);
         listView.setAdapter(dataAdapter);
 
     }
