@@ -3,7 +3,9 @@ package com.example.acerpc.emergencyapp;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 
 public class CampusMap extends AppCompatActivity {
 
@@ -20,6 +22,9 @@ public class CampusMap extends AppCompatActivity {
     }
 
 
+    public void showCampusMap(View view){
+        Log.v("edor", "campus map clicked");
+    }
 
 
     private void initToolbars() {

@@ -13,6 +13,7 @@
         <item>Other</item>
     </string-array>
     <string name="title_activity_report_sheet">ReportSheet</string>
+    <string name="title_activity_skaptopara_campus">Map</string>
 
 
 </resources>

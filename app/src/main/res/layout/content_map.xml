@@ -18,28 +18,29 @@
         android:minHeight="?attr/actionBarSize" />
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
+        android:layout_above="@+id/toolbar_bottom"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_above="@+id/toolbar_bottom"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
         android:weightSum="2">
 
         <ImageButton
+            android:id="@+id/imageButton2"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:id="@+id/imageButton2"
-
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:onClick="showCampusMap"
+            android:src="@drawable/weapon" />
 
         <ImageButton
+            android:id="@+id/imageButton3"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:id="@+id/imageButton3"
-
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:src="@drawable/robbery" />
     </LinearLayout>
 
 </RelativeLayout>
