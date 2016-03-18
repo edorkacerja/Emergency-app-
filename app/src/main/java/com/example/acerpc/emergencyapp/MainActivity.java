@@ -10,8 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import java.util.Map;
-
 public class MainActivity extends AppCompatActivity   {
 
     Button btnReport;
@@ -65,7 +63,7 @@ public class MainActivity extends AppCompatActivity   {
                         startActivity(intent2);
                         break;
                     case R.id.action_map:
-                        Intent intent3 = new Intent(getBaseContext(), Map.class);
+                        Intent intent3 = new Intent(getBaseContext(), CampusMap.class);
                         startActivity(intent3);
                     break;
                 }

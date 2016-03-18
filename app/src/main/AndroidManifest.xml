@@ -46,7 +46,7 @@
                 android:value="com.example.acerpc.emergencyapp.MainActivity" />
         </activity>
         <activity
-            android:name=".Map"
+            android:name=".CampusMap"
             android:label="@string/title_activity_map"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme">
