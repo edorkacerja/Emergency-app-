@@ -54,6 +54,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.acerpc.emergencyapp.MainActivity" />
         </activity>
+        <activity
+            android:name=".ReportSheet"
+            android:label="@string/title_activity_report_sheet"
+            android:parentActivityName=".Report"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.acerpc.emergencyapp.Report" />
+        </activity>
     </application>
 
 </manifest>

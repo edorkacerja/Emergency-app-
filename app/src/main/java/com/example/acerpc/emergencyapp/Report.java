@@ -1,6 +1,7 @@
 package com.example.acerpc.emergencyapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -34,7 +35,6 @@ public class Report extends AppCompatActivity implements OnItemClickListener{
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
         listView = (ListView) findViewById(R.id.listView);
 
 
@@ -49,6 +49,10 @@ public class Report extends AppCompatActivity implements OnItemClickListener{
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+        Intent intent = new Intent(this, ReportSheet.class);
+        startActivity(intent);
+
         Log.v("edor", "item "+ position +" clicked");
     }
 
