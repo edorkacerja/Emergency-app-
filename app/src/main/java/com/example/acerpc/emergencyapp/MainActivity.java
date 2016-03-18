@@ -4,11 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  implements View.OnLongClickListener {
 
     Button btnReport;
     Button btnMap;
@@ -56,20 +58,28 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean btnHomeClick(View view){
         switch (view.getId()){
-            case R.id.btnReport:
-                Intent intent = new Intent(this, Report.class);
+            case (R.id.btnReport):
 
+                Intent intent = new Intent(this, Report.class);
+                startActivity(intent);
+                Log.v("edor", "button report clicked");
                 break;
             case R.id.btnMap:
-
-                break;
-            case R.id.btnEmergency:
 
                 break;
         }
 
         return true;
     }
+
+
+
+
+
+
+
+
+
 
     public void viewMap(View view ){
 
@@ -80,4 +90,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public boolean onLongClick(View v) {
+
+        if(v.getId()== R.id.btnEmergency){
+            Toast.makeText(this,"Emergency message sent",Toast.LENGTH_SHORT).show();
+        }
+
+
+        return true;
+    }
 }
