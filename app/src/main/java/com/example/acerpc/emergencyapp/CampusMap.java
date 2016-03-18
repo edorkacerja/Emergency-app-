@@ -23,10 +23,17 @@ public class CampusMap extends AppCompatActivity {
     }
 
 
-    public boolean showCampusMap(View view){  
+    public boolean showCampusMap(View view){
 
         Intent intent = new Intent(this, SkaptoparaCampus.class);
         startActivity(intent);
+
+
+//        String uri = String.format(Locale.ENGLISH, "geo:%f,%f", latitude, longitude);
+//        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+//        startActivity(intent);
+
+
         return true;
     }
 

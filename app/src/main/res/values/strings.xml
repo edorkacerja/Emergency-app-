@@ -14,6 +14,9 @@
     </string-array>
     <string name="title_activity_report_sheet">ReportSheet</string>
     <string name="title_activity_skaptopara_campus">Map</string>
+    <string name="google_app_id">779441198135</string>
+
+
 
 
 </resources>
