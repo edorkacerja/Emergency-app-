@@ -23,7 +23,8 @@ public class Report extends AppCompatActivity implements OnItemClickListener{
     ListView listView;
     String[] reportTitles;
     int[] icons = {R.drawable.threat, R.drawable.weapon, R.drawable.robbery, R.drawable.threat};
-
+    TextView reason;
+    String reasonString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,18 +41,25 @@ public class Report extends AppCompatActivity implements OnItemClickListener{
 
         Resources res = getResources();
         reportTitles = res.getStringArray(R.array.titles);
-
+        reason = (TextView) findViewById(R.id.textView);
+        //reasonString = (String) reason.getText();
         EdorsAdapter adapter = new EdorsAdapter(this, reportTitles, icons);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(this);
+
 
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+        String s =(String) ((TextView) view.findViewById(R.id.textView)).getText();
+        
         Intent intent = new Intent(this, ReportSheet.class);
+        intent.putExtra("reason", s);
         startActivity(intent);
+
+
 
         Log.v("edor", "item "+ position +" clicked");
     }

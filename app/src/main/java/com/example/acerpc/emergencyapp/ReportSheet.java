@@ -4,9 +4,12 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class ReportSheet extends AppCompatActivity {
 
+    String reason;
+    TextView reasonReportSheet;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -14,8 +17,13 @@ public class ReportSheet extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+        reason = getIntent().getStringExtra("reason");
         initToolbars();
 
+
+        reasonReportSheet = (TextView) findViewById(R.id.textView2);
+        reasonReportSheet.setText(reason);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
