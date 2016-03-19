@@ -37,6 +37,17 @@ public class EmergencyContact extends AppCompatActivity {
         }
     }
 
+    public void sendEmail(View view) {
+        Intent in=new Intent(Intent.ACTION_CALL, Uri.parse("mailto:edorkacerja@gmail.com"));
+        try{
+            startActivity(in);
+        }
+
+        catch (android.content.ActivityNotFoundException ex){
+            Toast.makeText(getApplicationContext(), "yourActivity is not founded", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 
 
     private void initToolbars() {
