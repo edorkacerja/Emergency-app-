@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,7 +21,7 @@ public class ReportSheet extends AppCompatActivity implements View.OnClickListen
     TextView fullNameTextV, addressTextV, buildingTextV, descriptionTextV, reasonReportSheet;
     Button btnSend, btnAttachment;
     String fullName, address, building, description, attachmentFile, reason, email;
-
+    ImageView imageView = (ImageView) findViewById(R.id.imageView2);
     Uri URI = null;
 
     private static final int PICK_FROM_GALLERY = 101;
