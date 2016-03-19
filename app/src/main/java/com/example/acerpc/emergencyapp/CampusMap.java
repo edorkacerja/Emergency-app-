@@ -29,7 +29,7 @@ public class CampusMap extends AppCompatActivity {
             Intent intent = new Intent(this, SkaptoparaCampus.class);
             startActivity(intent);
         }else if (view.getId()==R.id.imageButton3){
-            Intent intent = new Intent(this, SkaptoparaCampus.class);
+            Intent intent = new Intent(this, MainBuilding.class);
             startActivity(intent);
         }
 

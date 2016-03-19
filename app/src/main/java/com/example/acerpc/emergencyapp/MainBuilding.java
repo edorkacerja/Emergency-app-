@@ -43,16 +43,16 @@ public class MainBuilding extends FragmentActivity implements OnMapReadyCallback
             return;
         }
         mMap.setMyLocationEnabled(true);
-
+        mMap.setBuildingsEnabled(true);
         mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
 
 
         // Add a marker in Blagoevgrad and move the camera
-        LatLng Blagoevgrad = new LatLng(42.021487, 23.095051);
+        LatLng Blagoevgrad = new LatLng(42.013935, 23.096517);
 
         mMap.addMarker(new MarkerOptions().position(Blagoevgrad).title("Blagoevgrad"));
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Blagoevgrad, 10));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Blagoevgrad, 17));
 
     }
 }
