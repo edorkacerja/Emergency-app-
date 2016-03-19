@@ -1,6 +1,8 @@
 package com.example.acerpc.emergencyapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -28,7 +30,6 @@ public class MainActivity extends AppCompatActivity   {
         btnMap = (Button) findViewById(R.id.btnMap);
         btnEmergency = (Button) findViewById(R.id.btnEmergency);
 
-
         btnEmergency.setOnLongClickListener(
                 new Button.OnLongClickListener() {
                     @Override
@@ -45,7 +46,21 @@ public class MainActivity extends AppCompatActivity   {
                     }
                 });
 
+
+
+
+        LocationManager locationManager = (LocationManager)
+                getSystemService(Context.LOCATION_SERVICE);
+
+
+
+
+
+
     }
+
+
+
 
 
 
@@ -80,6 +95,10 @@ public class MainActivity extends AppCompatActivity   {
         // Inflate a menu to be displayed in the toolbar
         bottomToolbar.inflateMenu(R.menu.menu_main);
     }
+
+
+
+
 
 
     public boolean btnHomeClick(View view){

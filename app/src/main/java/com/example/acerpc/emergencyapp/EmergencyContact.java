@@ -1,9 +1,13 @@
 package com.example.acerpc.emergencyapp;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 public class EmergencyContact extends AppCompatActivity {
 
@@ -19,6 +23,20 @@ public class EmergencyContact extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
+
+
+
+    public void call(View view) {
+        Intent in=new Intent(Intent.ACTION_CALL, Uri.parse("0000000000"));
+        try{
+            startActivity(in);
+        }
+
+        catch (android.content.ActivityNotFoundException ex){
+            Toast.makeText(getApplicationContext(), "yourActivity is not founded", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 
 
     private void initToolbars() {
