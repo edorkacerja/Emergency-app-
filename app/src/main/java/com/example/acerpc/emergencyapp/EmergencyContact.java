@@ -27,7 +27,7 @@ public class EmergencyContact extends AppCompatActivity {
 
 
     public void call(View view) {
-        Intent in=new Intent(Intent.ACTION_CALL, Uri.parse("0000000000"));
+        Intent in=new Intent(Intent.ACTION_CALL, Uri.parse("tel:0000000000"));
         try{
             startActivity(in);
         }
