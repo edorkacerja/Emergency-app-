@@ -29,14 +29,19 @@
         android:background="#CCC">
 
 
-        <ImageButton
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_info_white_24dp"
             android:id="@+id/imageView2"
+            android:layout_gravity="center_horizontal" />
+
+        <Button
+            android:id="@+id/btnAttachment"
             android:layout_width="153dp"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_margin="20dp"
-            android:layout_weight="0.12"
-            android:src="@drawable/threat" />
+            android:layout_margin="20dp" />
 
 
         <TextView
@@ -48,6 +53,7 @@ android:layout_margin="15dp"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <EditText
+            android:id="@+id/fullNameText"
             android:layout_width="match_parent"
             android:layout_margin="5dp"
             android:layout_height="30dp"
@@ -55,7 +61,7 @@ android:layout_margin="15dp"
             android:hint="  Full Name"/>
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/addressText"
             android:layout_width="match_parent"
             android:layout_margin="5dp"
 
@@ -65,10 +71,9 @@ android:layout_margin="15dp"
 
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/buildingText"
             android:layout_width="match_parent"
             android:layout_margin="5dp"
-
             android:layout_height="30dp"
             android:background="@drawable/rounded_edittext"
             android:hint="  Building"/>
@@ -76,17 +81,16 @@ android:layout_margin="15dp"
 
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/descriptionText"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_margin="5dp"
-
             android:background="@drawable/rounded_edittext"
             android:hint="  Description"/>
 
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnSend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
