@@ -38,9 +38,12 @@ public class EmergencyContact extends AppCompatActivity {
     }
 
     public void sendEmail(View view) {
-        Intent in=new Intent(Intent.ACTION_CALL, Uri.parse("mailto:edorkacerja@gmail.com"));
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+        emailIntent.setData(Uri.parse("mailto:"));
+        emailIntent.setType("text/plain");
+
         try{
-            startActivity(in);
+            startActivity(emailIntent);
         }
 
         catch (android.content.ActivityNotFoundException ex){
