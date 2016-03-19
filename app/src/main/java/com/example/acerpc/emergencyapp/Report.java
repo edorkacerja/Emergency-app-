@@ -54,7 +54,7 @@ public class Report extends AppCompatActivity implements OnItemClickListener{
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
         String s =(String) ((TextView) view.findViewById(R.id.textView)).getText();
-        
+
         Intent intent = new Intent(this, ReportSheet.class);
         intent.putExtra("reason", s);
         startActivity(intent);
