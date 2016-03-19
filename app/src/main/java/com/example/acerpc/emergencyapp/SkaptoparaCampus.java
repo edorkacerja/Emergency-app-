@@ -43,16 +43,16 @@ public class SkaptoparaCampus extends FragmentActivity implements OnMapReadyCall
             return;
         }
         mMap.setMyLocationEnabled(true);
-        
+
         mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
 
 
         // Add a marker in Blagoevgrad and move the camera
-        LatLng Blagoevgrad = new LatLng(42.021487, 23.095051);
+        LatLng Skaptopara = new LatLng(42.013935, 23.096517);
 
-        mMap.addMarker(new MarkerOptions().position(Blagoevgrad).title("Blagoevgrad"));
+        mMap.addMarker(new MarkerOptions().position(Skaptopara).title("Skaptopara Campus"));
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Blagoevgrad, 17));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Skaptopara, 17));
 
     }
 }
