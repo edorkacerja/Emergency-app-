@@ -37,9 +37,6 @@ public class CampusMap extends AppCompatActivity {
         return true;
     }
 
-
-
-
     private void initToolbars() {
 
         Toolbar bottomToolbar = (Toolbar) findViewById(R.id.toolbar_bottom);
