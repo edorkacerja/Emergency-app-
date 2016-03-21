@@ -1,13 +1,10 @@
 package com.example.acerpc.emergencyapp;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -21,7 +18,7 @@ public class ReportSheet extends AppCompatActivity implements View.OnClickListen
     TextView fullNameTextV, addressTextV, buildingTextV, descriptionTextV, reasonReportSheet;
     Button btnSend, btnAttachment;
     String fullName, address, building, description, attachmentFile, reason, email;
-    ImageView imageView = (ImageView) findViewById(R.id.imageView2);
+    ImageView imageView;
     Uri URI = null;
 
     private static final int PICK_FROM_GALLERY = 101;
@@ -59,27 +56,27 @@ public class ReportSheet extends AppCompatActivity implements View.OnClickListen
     }
 
 
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
-        if (requestCode == PICK_FROM_GALLERY && resultCode == RESULT_OK) {
-
-            //Get Path
-            Uri selectedImage = data.getData();
-
-            String[] filePathColumn = {MediaStore.Images.Media.DATA};
-
-
-            Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
-
-            cursor.moveToFirst();
-
-            columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-            attachmentFile = cursor.getString(columnIndex);
-            Log.e("Attachment Path:", attachmentFile);
-            URI = Uri.parse("file://" + attachmentFile);
-            cursor.close();
-        }
-    }
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//
+//        if (requestCode == PICK_FROM_GALLERY && resultCode == RESULT_OK) {
+//
+//            //Get Path
+//            Uri selectedImage = data.getData();
+//
+//            String[] filePathColumn = {MediaStore.Images.Media.DATA};
+//
+//
+//            Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
+//
+//            cursor.moveToFirst();
+//
+//            columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+//            attachmentFile = cursor.getString(columnIndex);
+//            Log.e("Attachment Path:", attachmentFile);
+//            URI = Uri.parse("file://" + attachmentFile);
+//            cursor.close();
+//        }
+//    }
 
 
     @Override
@@ -136,6 +133,8 @@ public class ReportSheet extends AppCompatActivity implements View.OnClickListen
 
 
     private void initToolbars() {
+        Toolbar topToolbar = (Toolbar) findViewById(R.id.toolbar_top);
+        setSupportActionBar(topToolbar);
 
         Toolbar bottomToolbar = (Toolbar) findViewById(R.id.toolbar_bottom);
         bottomToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
@@ -143,9 +142,19 @@ public class ReportSheet extends AppCompatActivity implements View.OnClickListen
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.action_call:
-                        // TODO
+
+                        Intent intent = new Intent(getBaseContext(), EmergencyContact.class);
+                        startActivity(intent);
                         break;
                     // TODO: Other cases
+                    case R.id.action_info:
+                        Intent intent2 = new Intent(getBaseContext(), Info.class);
+                        startActivity(intent2);
+                        break;
+                    case R.id.action_map:
+                        Intent intent3 = new Intent(getBaseContext(), CampusMap.class);
+                        startActivity(intent3);
+                        break;
                 }
                 return true;
             }
