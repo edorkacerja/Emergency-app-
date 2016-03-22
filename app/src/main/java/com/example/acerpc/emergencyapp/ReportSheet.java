@@ -12,13 +12,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
+
 public class ReportSheet extends AppCompatActivity implements View.OnClickListener {
 
+    private int PICK_IMAGE_REQUEST = 1;
 
     TextView fullNameTextV, addressTextV, buildingTextV, descriptionTextV, reasonReportSheet;
     Button btnSend, btnAttachment;
     String fullName, address, building, description, attachmentFile, reason, email;
-    ImageView imageView;
+    ImageView profilePic;
     Uri URI = null;
 
     private static final int PICK_FROM_GALLERY = 101;
@@ -39,6 +42,7 @@ public class ReportSheet extends AppCompatActivity implements View.OnClickListen
         descriptionTextV = (TextView) findViewById(R.id.descriptionText);
         btnSend = (Button) findViewById(R.id.btnSend);
         btnAttachment = (Button) findViewById(R.id.btnAttachment);
+        profilePic = (ImageView) findViewById(R.id.profilePicture);
 
 
         reason = getIntent().getStringExtra("reason");
@@ -122,13 +126,24 @@ public class ReportSheet extends AppCompatActivity implements View.OnClickListen
 
     public void openGallery() {
         Intent intent = new Intent();
+        // Show only images, no videos or anything else
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        intent.putExtra("return-data", true);
-        startActivityForResult(
-                Intent.createChooser(intent, "Complete action using"),
-                PICK_FROM_GALLERY);
+        // Always show the chooser (if there are multiple options available)
+        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
+
+            Uri uri = data.getData();
+
+            Picasso.with(getBaseContext()).load(uri).fit().centerInside().into(profilePic);
+        }
     }
 
 
