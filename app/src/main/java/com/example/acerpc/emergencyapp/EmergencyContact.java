@@ -64,8 +64,8 @@ public class EmergencyContact extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.action_call:
 
-                        Intent intent = new Intent(getBaseContext(), EmergencyContact.class);
-                        startActivity(intent);
+//                        Intent intent = new Intent(getBaseContext(), EmergencyContact.class);
+//                        startActivity(intent);
                         break;
                     // TODO: Other cases
                     case R.id.action_info:

@@ -39,8 +39,8 @@ public class Info extends AppCompatActivity {
                         break;
                     // TODO: Other cases
                     case R.id.action_info:
-                        Intent intent2 = new Intent(getBaseContext(), Info.class);
-                        startActivity(intent2);
+//                        Intent intent2 = new Intent(getBaseContext(), Info.class);
+//                        startActivity(intent2);
                         break;
                     case R.id.action_map:
                         Intent intent3 = new Intent(getBaseContext(), CampusMap.class);

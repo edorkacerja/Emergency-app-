@@ -57,8 +57,8 @@ public class CampusMap extends AppCompatActivity {
                         startActivity(intent2);
                         break;
                     case R.id.action_map:
-                        Intent intent3 = new Intent(getBaseContext(), CampusMap.class);
-                        startActivity(intent3);
+//                        Intent intent3 = new Intent(getBaseContext(), CampusMap.class);
+//                        startActivity(intent3);
                         break;
                 }
                 return true;
