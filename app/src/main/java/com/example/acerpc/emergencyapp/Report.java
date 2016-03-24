@@ -100,7 +100,10 @@ public class Report extends AppCompatActivity implements OnItemClickListener{
     }
 
 
+
     private void initToolbars() {
+        Toolbar topToolbar = (Toolbar) findViewById(R.id.toolbar_top);
+//        setSupportActionBar(topToolbar);
 
         Toolbar bottomToolbar = (Toolbar) findViewById(R.id.toolbar_bottom);
         bottomToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
@@ -108,9 +111,19 @@ public class Report extends AppCompatActivity implements OnItemClickListener{
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.action_call:
-                        // TODO
+
+                        Intent intent = new Intent(getBaseContext(), EmergencyContact.class);
+                        startActivity(intent);
                         break;
                     // TODO: Other cases
+                    case R.id.action_info:
+                        Intent intent2 = new Intent(getBaseContext(), Info.class);
+                        startActivity(intent2);
+                        break;
+                    case R.id.action_map:
+                        Intent intent3 = new Intent(getBaseContext(), CampusMap.class);
+                        startActivity(intent3);
+                        break;
                 }
                 return true;
             }
