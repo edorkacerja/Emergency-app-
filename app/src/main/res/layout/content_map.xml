@@ -27,21 +27,23 @@
         android:orientation="vertical"
         android:weightSum="2">
 
-        <ImageButton
+        <Button
             android:id="@+id/imageButton2"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:onClick="showCampusMap"
-            android:src="@drawable/weapon" />
+            style="?android:attr/borderlessButtonStyle"
+            android:background="@drawable/maps"/>
 
-        <ImageButton
+        <Button
             android:id="@+id/imageButton3"
             android:layout_width="match_parent"
             android:onClick="showCampusMap"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:src="@drawable/robbery" />
+            style="?android:attr/borderlessButtonStyle"
+            android:background="@drawable/maps"/>
     </LinearLayout>
 
 </RelativeLayout>
