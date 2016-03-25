@@ -42,8 +42,10 @@
             android:layout_width="153dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:background="@android:color/transparent"            android:text="Attach Image"
-            android:layout_margin="20dp" />
+            android:background="@drawable/button"
+            android:text="Attach Image"
+            android:layout_margin="20dp"
+            android:textColor="#FFF"/>
 
 
         <TextView
@@ -69,7 +71,6 @@ android:layout_margin="15dp"
             android:id="@+id/addressText"
             android:layout_width="match_parent"
             android:layout_margin="5dp"
-
             android:layout_height="30dp"
             android:background="@drawable/rounded_edittext"
             android:hint="  Address"/>
@@ -88,7 +89,7 @@ android:layout_margin="15dp"
         <EditText
             android:id="@+id/descriptionText"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="55dp"
             android:layout_margin="5dp"
             android:background="@drawable/rounded_edittext"
             android:hint="  Description"/>
@@ -100,7 +101,7 @@ android:layout_margin="15dp"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:layout_weight="0.12"
-            android:text="New Button" />
+            android:text="Send report" />
     </LinearLayout>
 
 
