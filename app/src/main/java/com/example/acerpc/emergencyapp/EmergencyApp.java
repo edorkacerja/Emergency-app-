@@ -12,7 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity   {
+public class EmergencyApp extends AppCompatActivity   {
 
     Button btnReport;
     Button btnMap;
@@ -34,13 +34,13 @@ public class MainActivity extends AppCompatActivity   {
                 new Button.OnLongClickListener() {
                     @Override
                     public boolean onLongClick(View v) {
-                        Toast.makeText(MainActivity.this, "Emergency message sent", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(EmergencyApp.this, "Emergency message sent", Toast.LENGTH_SHORT).show();
 
 
-                        Intent sendIntent = new Intent(Intent.ACTION_VIEW);
-                        sendIntent.putExtra("sms_body", "default content");
-                        sendIntent.setType("vnd.android-dir/mms-sms");
-                        startActivity(sendIntent);
+//                        Intent sendIntent = new Intent(Intent.ACTION_VIEW);
+//                        sendIntent.putExtra("sms_body", "default content");
+//                        sendIntent.setType("vnd.android-dir/mms-sms");
+//                        startActivity(sendIntent);
 
                         return true;
                     }

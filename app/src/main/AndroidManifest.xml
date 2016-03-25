@@ -36,7 +36,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".MainActivity"
+            android:name=".EmergencyApp"
             android:label="@string/title_activity_main"
             android:uiOptions="splitActionBarWhenNarrow">
             <intent-filter>
@@ -48,38 +48,38 @@
         <activity
             android:name=".Report"
             android:label="@string/title_activity_report"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".EmergencyApp"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.acerpc.emergencyapp.MainActivity" />
+                android:value=".EmergencyApp" />
         </activity>
         <activity
             android:name=".EmergencyContact"
             android:label="@string/title_activity_emergency_contact"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".EmergencyApp"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.acerpc.emergencyapp.MainActivity" />
+                android:value=".EmergencyApp" />
         </activity>
         <activity
             android:name=".Info"
             android:label="@string/title_activity_info"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".EmergencyApp"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.acerpc.emergencyapp.MainActivity" />
+                android:value=".EmergencyApp" />
         </activity>
         <activity
             android:name=".CampusMap"
             android:label="@string/title_activity_map"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".EmergencyApp"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.acerpc.emergencyapp.MainActivity" />
+                android:value=".EmergencyApp" />
         </activity>
         <activity
             android:name=".ReportSheet"
