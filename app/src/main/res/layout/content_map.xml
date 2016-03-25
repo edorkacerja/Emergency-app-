@@ -34,7 +34,7 @@
             android:layout_weight="1"
             android:onClick="showCampusMap"
             style="?android:attr/borderlessButtonStyle"
-            android:background="@drawable/maps"/>
+            android:background="@drawable/campus"/>
 
         <Button
             android:id="@+id/imageButton3"
@@ -43,7 +43,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             style="?android:attr/borderlessButtonStyle"
-            android:background="@drawable/maps"/>
+            android:background="@drawable/mb"/>
     </LinearLayout>
 
 </RelativeLayout>
