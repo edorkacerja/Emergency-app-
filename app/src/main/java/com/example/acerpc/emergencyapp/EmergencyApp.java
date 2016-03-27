@@ -25,14 +25,16 @@ import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-public class EmergencyApp extends AppCompatActivity   {
+public class EmergencyApp extends AppCompatActivity {
 
     Button btnReport;
     Button btnMap;
     Button btnEmergency;
+    GPSTracker gps;
 
     private Toolbar topToolbar;
     private Toolbar bottomToolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +50,25 @@ public class EmergencyApp extends AppCompatActivity   {
                     @Override
                     public boolean onLongClick(View v) {
                         Toast.makeText(EmergencyApp.this, "Emergency message sent", Toast.LENGTH_SHORT).show();
-                        sendMail("edorkacerja@gmail.com","danger", "someone is in danger");
+                        // create class object
+                        gps = new GPSTracker(EmergencyApp.this);
+
+                        // check if GPS enabled
+                        if(gps.canGetLocation()){
+
+                            double latitude = gps.getLatitude();
+                            double longitude = gps.getLongitude();
+
+                            // \n is for new line
+                            Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
+                        }else{
+                            // can't get location
+                            // GPS or Network is not enabled
+                            // Ask user to enable GPS/network in settings
+                            gps.showSettingsAlert();
+                        }
+
+                        sendMail("edorkacerja@gmail.com", "danger", "https://www.google.com/maps?q=" + Double.toString(gps.getLatitude()) + "," + Double.toString(gps.getLongitude()));
 
 //                        Intent sendIntent = new Intent(Intent.ACTION_VIEW);
 //                        sendIntent.putExtra("sms_body", "default content");
@@ -60,22 +80,11 @@ public class EmergencyApp extends AppCompatActivity   {
                 });
 
 
-
-
         LocationManager locationManager = (LocationManager)
                 getSystemService(Context.LOCATION_SERVICE);
 
 
-
-
-
-
     }
-
-
-
-
-
 
 
     private void initToolbars() {
@@ -100,7 +109,7 @@ public class EmergencyApp extends AppCompatActivity   {
                     case R.id.action_map:
                         Intent intent3 = new Intent(getBaseContext(), CampusMap.class);
                         startActivity(intent3);
-                    break;
+                        break;
                 }
                 return true;
             }
@@ -110,12 +119,8 @@ public class EmergencyApp extends AppCompatActivity   {
     }
 
 
-
-
-
-
-    public boolean btnHomeClick(View view){
-        switch (view.getId()){
+    public boolean btnHomeClick(View view) {
+        switch (view.getId()) {
             case (R.id.btnReport):
 
                 Intent intent = new Intent(this, Report.class);
@@ -133,11 +138,6 @@ public class EmergencyApp extends AppCompatActivity   {
     }
 
 
-
-
-
-
-
     private MimeMessage createMessage(String email, String subject, String messageBody, Session session) throws MessagingException, UnsupportedEncodingException {
         MimeMessage message = new MimeMessage(session);
         message.setFrom(new InternetAddress("edorkacerja@gmail.com", "Tiemen Schut"));
@@ -146,9 +146,6 @@ public class EmergencyApp extends AppCompatActivity   {
         message.setText(messageBody);
         return message;
     }
-
-
-
 
 
     private void sendMail(String email, String subject, String messageBody) {
@@ -167,9 +164,6 @@ public class EmergencyApp extends AppCompatActivity   {
     }
 
 
-
-
-
     private Session createSessionObject() {
         Properties properties = new Properties();
         properties.put("mail.smtp.auth", "true");
@@ -179,12 +173,10 @@ public class EmergencyApp extends AppCompatActivity   {
 
         return Session.getInstance(properties, new javax.mail.Authenticator() {
             protected javax.mail.PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("edorkacerja@gmail.com","Ildailda1");
+                return new PasswordAuthentication("edorkacerja@gmail.com", "Ildailda1");
             }
         });
     }
-
-
 
 
     private class SendMailTask extends AsyncTask<MimeMessage, Void, Void> {
@@ -212,14 +204,4 @@ public class EmergencyApp extends AppCompatActivity   {
             return null;
         }
     }
-
-
-
-
-
-
-
-
-
-
 }
