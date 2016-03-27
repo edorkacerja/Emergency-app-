@@ -33,6 +33,7 @@ public class CampusMap extends AppCompatActivity {
             startActivity(intent);
         }
 
+        String locaton = "https://www.google.bg/maps/@" + 42.0165332 + "," + 23.084957 + ",16z?hl=en";
 
         return true;
     }

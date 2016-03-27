@@ -10,99 +10,105 @@
     tools:showIn="@layout/activity_report_sheet">
 
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_bottom"
+
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize" />
+        android:layout_height="match_parent">
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="20dp"
-        android:weightSum="1"
-        android:layout_above="@+id/toolbar_bottom"
-        >
-
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/ic_info_white_24dp"
-            android:id="@+id/profilePicture"
-
-            android:layout_gravity="center_horizontal"
-            android:scaleType="fitCenter"/>
-
-        <Button
-            android:id="@+id/btnAttachment"
-            android:layout_width="153dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/button"
-            android:text="Attach Image"
-            android:layout_margin="20dp"
-            android:textColor="#FFF"/>
-
-
-        <TextView
-            android:id="@+id/textView2"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Large Text"
-android:layout_margin="15dp"
-            android:textColor="#FFF"
-            android:textAllCaps="true"
-            android:textStyle="bold"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="20dp"
+            android:weightSum="1"
+            android:layout_above="@+id/toolbar_bottom"
+            >
 
-        <EditText
-            android:id="@+id/fullNameText"
-            android:layout_width="match_parent"
-            android:layout_margin="5dp"
-            android:layout_height="30dp"
-            android:background="@drawable/rounded_edittext"
-            android:hint="  Full Name"/>
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_info_white_24dp"
+                android:id="@+id/profilePicture"
 
-        <EditText
-            android:id="@+id/addressText"
-            android:layout_width="match_parent"
-            android:layout_margin="5dp"
-            android:layout_height="30dp"
-            android:background="@drawable/rounded_edittext"
-            android:hint="  Address"/>
+                android:layout_gravity="center_horizontal"
+                android:scaleType="fitCenter"/>
 
-
-        <EditText
-            android:id="@+id/buildingText"
-            android:layout_width="match_parent"
-            android:layout_margin="5dp"
-            android:layout_height="30dp"
-            android:background="@drawable/rounded_edittext"
-            android:hint="  Building"/>
+            <Button
+                android:id="@+id/btnAttachment"
+                android:layout_width="153dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/button"
+                android:text="Attach Image"
+                android:layout_margin="20dp"
+                android:textColor="#FFF"/>
 
 
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Large Text"
+                android:layout_margin="15dp"
+                android:textColor="#FFF"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <EditText
-            android:id="@+id/descriptionText"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_margin="5dp"
-            android:background="@drawable/rounded_edittext"
-            android:hint="  Description"/>
+            <EditText
+                android:id="@+id/fullNameText"
+                android:layout_width="match_parent"
+                android:layout_margin="5dp"
+                android:layout_height="30dp"
+                android:background="@drawable/rounded_edittext"
+                android:hint="  Full Name"/>
+
+            <EditText
+                android:id="@+id/addressText"
+                android:layout_width="match_parent"
+                android:layout_margin="5dp"
+                android:layout_height="30dp"
+                android:background="@drawable/rounded_edittext"
+                android:hint="  Address"/>
 
 
-        <Button
-            android:id="@+id/btnSend"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_weight="0.12"
-            android:text="Send report" />
-    </LinearLayout>
+            <EditText
+                android:id="@+id/buildingText"
+                android:layout_width="match_parent"
+                android:layout_margin="5dp"
+                android:layout_height="30dp"
+                android:background="@drawable/rounded_edittext"
+                android:hint="  Building"/>
 
+
+
+            <EditText
+                android:id="@+id/descriptionText"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/rounded_edittext"
+                android:hint="  Description"/>
+
+
+            <Button
+                android:id="@+id/btnSend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_weight="0.12"
+                android:text="Send report" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize" />
+        </LinearLayout>
+
+    </ScrollView>
 
 </RelativeLayout>

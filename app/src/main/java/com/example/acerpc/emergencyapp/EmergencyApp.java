@@ -1,8 +1,10 @@
 package com.example.acerpc.emergencyapp;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.location.LocationManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -11,6 +13,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import java.io.UnsupportedEncodingException;
+import java.util.Properties;
+
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 public class EmergencyApp extends AppCompatActivity   {
 
@@ -35,7 +48,7 @@ public class EmergencyApp extends AppCompatActivity   {
                     @Override
                     public boolean onLongClick(View v) {
                         Toast.makeText(EmergencyApp.this, "Emergency message sent", Toast.LENGTH_SHORT).show();
-
+                        sendMail("edorkacerja@gmail.com","danger", "someone is in danger");
 
 //                        Intent sendIntent = new Intent(Intent.ACTION_VIEW);
 //                        sendIntent.putExtra("sms_body", "default content");
@@ -117,6 +130,87 @@ public class EmergencyApp extends AppCompatActivity   {
         }
 
         return true;
+    }
+
+
+
+
+
+
+
+    private MimeMessage createMessage(String email, String subject, String messageBody, Session session) throws MessagingException, UnsupportedEncodingException {
+        MimeMessage message = new MimeMessage(session);
+        message.setFrom(new InternetAddress("edorkacerja@gmail.com", "Someone In Danger"));
+        message.addRecipient(MimeMessage.RecipientType.TO, new InternetAddress(email, email));
+        message.setSubject(subject);
+        message.setText(messageBody);
+        return message;
+    }
+
+
+
+
+
+    private void sendMail(String email, String subject, String messageBody) {
+        Session session = createSessionObject();
+
+        try {
+            MimeMessage message = createMessage(email, subject, messageBody, session);
+            new SendMailTask().execute(message);
+        } catch (AddressException e) {
+            e.printStackTrace();
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+
+
+    private Session createSessionObject() {
+        Properties properties = new Properties();
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.starttls.enable", "true");
+        properties.put("mail.smtp.host", "smtp.gmail.com");
+        properties.put("mail.smtp.port", "587");
+
+        return Session.getInstance(properties, new javax.mail.Authenticator() {
+            protected javax.mail.PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication("edorkacerja@google.com","Ildailda1");
+            }
+        });
+    }
+
+
+
+
+    private class SendMailTask extends AsyncTask<MimeMessage, Void, Void> {
+        private ProgressDialog progressDialog;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            progressDialog = ProgressDialog.show(EmergencyApp.this, "Please wait", "Sending mail", true, false);
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            progressDialog.dismiss();
+        }
+
+        @Override
+        protected Void doInBackground(MimeMessage... messages) {
+            try {
+                Transport.send(messages[0]);
+            } catch (MessagingException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
     }
 
 
