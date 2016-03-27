@@ -140,7 +140,7 @@ public class EmergencyApp extends AppCompatActivity   {
 
     private MimeMessage createMessage(String email, String subject, String messageBody, Session session) throws MessagingException, UnsupportedEncodingException {
         MimeMessage message = new MimeMessage(session);
-        message.setFrom(new InternetAddress("edorkacerja@gmail.com", "Someone In Danger"));
+        message.setFrom(new InternetAddress("edorkacerja@gmail.com", "Tiemen Schut"));
         message.addRecipient(MimeMessage.RecipientType.TO, new InternetAddress(email, email));
         message.setSubject(subject);
         message.setText(messageBody);
@@ -179,7 +179,7 @@ public class EmergencyApp extends AppCompatActivity   {
 
         return Session.getInstance(properties, new javax.mail.Authenticator() {
             protected javax.mail.PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("edorkacerja@google.com","Ildailda1");
+                return new PasswordAuthentication("edorkacerja@gmail.com","Ildailda1");
             }
         });
     }
