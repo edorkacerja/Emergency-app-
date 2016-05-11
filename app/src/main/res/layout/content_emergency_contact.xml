@@ -26,7 +26,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_margin="20dp"
-        android:src="@drawable/robbery" />
+        android:src="@drawable/security" />
 
     <TextView
         android:id="@+id/textView4"
@@ -37,7 +37,7 @@
         android:layout_alignTop="@+id/imageView3"
         android:layout_marginTop="79dp"
         android:layout_toRightOf="@+id/imageView3"
-        android:text="Ivan Ivanov"
+        android:text="Ilko Vangelov"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
@@ -48,7 +48,7 @@
         android:layout_alignRight="@+id/textView4"
         android:layout_below="@+id/textView4"
         android:layout_toRightOf="@+id/imageView3"
-        android:text="Head of Security" />
+        android:text="AUBG Security Manager" />
 
     <TextView
         android:id="@+id/textView5"
@@ -76,7 +76,7 @@
         android:layout_below="@+id/textView5"
         android:layout_marginLeft="20dp"
 
-        android:text="Office: 342 MB"
+        android:text="Office: 108A, MB"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
@@ -90,7 +90,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView6"
-        android:text="email: edorkacerja@gmail.com"
+        android:text="email: ilko@aubg.edu"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
@@ -103,7 +103,7 @@
         android:layout_marginLeft="20dp"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView7"
-        android:text="tel: +355 69 226 5996"
+        android:text="tel: (+359 73) 888 106"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <LinearLayout
